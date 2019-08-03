@@ -4,6 +4,6 @@ The Guitar Fretboard Grimoire is a js script for procedurally generating fretboa
 
 The grimoire can render charts in any tuning. By default, it will build the Grimoire in Standard Tuning, and All-fourths tuning. 
 
-[Grimoire in Standard Tuning]("The%20Guitar%20Fretboared%20Grimoire%20-%20All-fourths Tuning.md")
-[Grimoire in All-fourths Tuning]("The%20Guitar%20Fretboared%20Grimoire%20-%20Standard Tuning.md")
+[Grimoire in Standard Tuning](The%20Guitar%20Fretboared%20Grimoire%20-%20All-fourths Tuning.md)
+[Grimoire in All-fourths Tuning](The%20Guitar%20Fretboared%20Grimoire%20-%20Standard Tuning.md)
 
