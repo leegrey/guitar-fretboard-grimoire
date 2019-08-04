@@ -1,4 +1,4 @@
-# The Guitar Fretboared Grimoire
+# The Guitar Fretboared Grimoire (All-fourths Tuning)
 
 
 ## Intervals

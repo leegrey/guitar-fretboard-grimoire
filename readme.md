@@ -14,4 +14,4 @@ The grimoire can render charts in any tuning. By default, it will build the Grim
 
 ## Future Plans
 
-*Chord Generator* As an extention to the current functionality, I'd like to write an analysis mode that generates chord voicings in various fingerings. 
+**Chord Generator** - As an extention to the current functionality, I'd like to write an analysis mode that generates chord voicings in various fingerings. 

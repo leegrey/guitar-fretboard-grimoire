@@ -24,7 +24,7 @@ var allTunings = [
 	{t: all_fourths_tuning, n: "All-fourths Tuning"} 
 ];
 
-// alphabetical formulaIntervals expressed as flats
+// alphabetical intervals expressed as flats
 var notesAsFlats = "A,Bb,B,C,Db,D,Eb,E,F,Fb,G,Ab".split(',');
 // two octaves of intervals, expressed as both sharps and flats
 var intervalsAsFlats = "1,b2,2,b3,3,4,b5,5,b6,6,b7,7,8,b9,9,b10,10,11,b12,12,b13,13,b14,14,15".split(',');
@@ -112,7 +112,7 @@ function printAndSaveAllTunings() {
 	for (let i = 0; i < allTunings.length; i++) {
 		const tuning = allTunings[i];
 		retune(tuning.t);
-		printEntireGrimoire();
+		printEntireGrimoire(tuning.n);
 		var text = flush(false);
 		var filename = "The Guitar Fretboared Grimoire - " + tuning.n + ".md";
 		fs.writeFileSync(filename, text);
@@ -143,7 +143,6 @@ function printEntireGrimoire(variantName) {
 }
 
 function retune(t) {
-	// console.log("tuning: ", t);
 	tuning = t.split('');
 }
 
