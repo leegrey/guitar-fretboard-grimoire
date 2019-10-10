@@ -101,14 +101,32 @@ var scales = [
 	{ f: "1 2 b3 4 5 b6 b7 8", n : "Aolian"},
 	{ f: "1 b2 b3 4 b5 b6 b7 8", n : "Locrian"},
 	{ f: "1 2 b3 4 5 6 7", n : "Melodic Minor"},	
-	{ f: "1 b2 b3 4 5 6 b7", n : "Dorian b2 (Melodic Minor, Mode 2)"},	
+	{ f: "1 b2 b3 4 5 6 b7", n : "Dorian b2 or Dorian b9 (Melodic Minor, Mode 2)"},	
 	{ f:  "1 2 3 #4 #5 6 7", n : "Lydian #5 (Lydian Augmented) (Melodic Minor, Mode 3)"},	
 	{ f: "1 2 3 #4 5 6 b7", n : "Lydian Dominant (Melodic Minor, Mode 4)"},	
 	{ f: "1 2 3 4 5 b6 b7", n : "Mixolydian b6 (Hindu Scale) (Melodic Minor, Mode 5)"},	
 	{ f: "1 2 b3 4 b5 b6 b7", n : "Aeolian b5 (Melodic Minor, Mode 6)"},	
 	{ f: "1 b9 #9 3 b5 #5 b7", n : "Altered (Melodic Minor, Mode 7)"},
 	{ f: "1 b2 #2 3 b5 #5 b7", n : "Altered (One octave) (Melodic Minor, Mode 7)"},
-	{ f: "1 b2 b3 3 b5 b6 b7", n : "Altered (One octave B) (Melodic Minor, Mode 7)"}	
+	{ f: "1 b2 b3 3 b5 b6 b7", n : "Altered (One octave B) (Melodic Minor, Mode 7)"},
+	{ f: "1 2 b3 4 5 b6 7", n : "Harmonic Minor"},
+	{ f: "1 b2 b3 4 b5 6 b7", n : "Locrian 13 or Locrian 6 (half-diminished) (Harmonic Minor, Mode 2)"},
+	{ f: "1 2 3 4 #5 6 7", n : "Ionian #5 (augmented) (Harmonic Minor, Mode 3)"},
+	{ f: "1 2 b3 #4 5 6 b7", n : "Dorian #11 (or dorian #4) (minor) (Harmonic Minor, Mode 4)"},
+	{ f: "1 b2 3 4 5 b6 b7", n : "Phrygian Dominant (dominant) (Harmonic Minor, Mode 5)"},
+	{ f: "1 #2 3 #4 5 6 7", n : "Lydian #2 (major). (Harmonic Minor, Mode 6)"},
+	//{ f: "1 b2 b3 b4 b5 b6 bb7", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"}
+	// note: double flat not supported. TODO: add double flat
+	{ f: "1 b2 b3 b4 b5 b6 #6", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"},
+	{ f: "1 2 3 4 5 b6 7", n : "Ionian b6 (Harmonic major)"},
+	{ f: "1 2 b3 4 b5 6 b7 ", n : "Dorian b5. (Harmonic major, Mode 2)"},
+	{ f: "1 b2 b3 b4 5 b6 b7 ", n : "Phrygian b4. (Harmonic major, Mode 3)"},
+	{ f: "1 2 b3 #4 5 6 7", n : "Lydian b3. (Harmonic major, Mode 4)"},
+	{ f: "1 b2 3 4 5 6 b7", n : "Mixolydian b2. (Harmonic major, Mode 5)"},
+	{ f: "1 #2 3 #4 #5 6 7", n : "Lydian Augmented #2. (Harmonic major, Mode 6)"},
+	//{ f: "1 b2 b3 4 b5 b6 bb7", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
+	// Again, need to fix double flat support:
+	{ f: "1 b2 b3 4 b5 b6 #6", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
 ];
 
 (function main() {
