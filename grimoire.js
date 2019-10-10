@@ -14,8 +14,8 @@ function echo(params) {
 
 // the tuning of the guitar
 
-var standard_tuning = "EADGBE";//
-var all_fourths_tuning = "EADGCF";//.split('');
+var standard_tuning = "EADGBE";
+var all_fourths_tuning = "EADGCF";
 
 var tuning = standard_tuning.split();
 
@@ -62,7 +62,7 @@ var intervalFormulas = [
 
 var chords = [
 	{ f: "1 5", n : "Power Chord"},
-	{ f: "1 5 9", n : "Power Chord 9"}, // not supported yet (above 7)
+	{ f: "1 5 9", n : "Power Chord add 9"}, // not supported yet (above 7)
 	{ f: "1 3 5", n : "Major" },
 	{ f: "1 b3 5", n : "Minor"},
 	{ f: "1 3 5 7", n : "Major Seventh"},
@@ -70,6 +70,19 @@ var chords = [
 	{ f: "1 3 5 b7", n : "Dominant Seventh"},
 	{ f: "1 b3 5 7", n : "Minor/Major Seventh"},	
 	{ f: "1 b3 5 7 9", n : "Minor/Major Ninth"},
+	{ f: "1 b3 5 b7 9", n : "Minor Seven Nine"},
+	{ f: "1 b3 5 b7 b9", n : "Minor Seven flat Nine"},
+	
+	{ f: "1 5 7 9", n : "Power Seven Nine"},
+	{ f: "1 5 7 b9", n : "Power Seven Flat Nine"},
+	
+	{ f: "1 b3 b5", n : "Diminished"},
+	{ f: "1 b3 b5 6", n : "Diminished Seventh (1 b3 b5 bb7)"},
+	
+	{ f: "1 3 5 b7 #9", n : "Dominant Seventh Sharp Nine (Hendrix chord)"},
+	{ f: "1 3 #5 b7 b9", n : "7#5b9 (Micky Baker)"},
+	
+
 ];
 
 var scales = [
