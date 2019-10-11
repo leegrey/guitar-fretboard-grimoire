@@ -7,65 +7,65 @@
 #### Chords
 
 
-1 5 - Power Chord 
-1 5 9 - Power Chord add 9 
-1 3 5 - Major 
-1 b3 5 - Minor 
-1 3 5 7 - Major Seventh 
-1 b3 5 b7 - Minor Seventh 
-1 3 5 b7 - Dominant Seventh 
-1 b3 5 7 - Minor/Major Seventh 
-1 b3 5 7 9 - Minor/Major Ninth 
-1 b3 5 b7 9 - Minor Seven Nine 
-1 b3 5 b7 b9 - Minor Seven flat Nine 
-1 5 7 9 - Power Seven Nine 
-1 5 7 b9 - Power Seven Flat Nine 
-1 b3 b5 - Diminished 
-1 b3 b5 6 - Diminished Seventh (1 b3 b5 bb7) 
-1 3 5 b7 #9 - Dominant Seventh Sharp Nine (Hendrix chord) 
-1 3 #5 b7 b9 - 7#5b9 (Micky Baker) 
+1 5 - Power Chord  
+1 5 9 - Power Chord add 9  
+1 3 5 - Major  
+1 b3 5 - Minor  
+1 3 5 7 - Major Seventh  
+1 b3 5 b7 - Minor Seventh  
+1 3 5 b7 - Dominant Seventh  
+1 b3 5 7 - Minor/Major Seventh  
+1 b3 5 7 9 - Minor/Major Ninth  
+1 b3 5 b7 9 - Minor Seven Nine  
+1 b3 5 b7 b9 - Minor Seven flat Nine  
+1 5 7 9 - Power Seven Nine  
+1 5 7 b9 - Power Seven Flat Nine  
+1 b3 b5 - Diminished  
+1 b3 b5 6 - Diminished Seventh (1 b3 b5 bb7)  
+1 3 5 b7 #9 - Dominant Seventh Sharp Nine (Hendrix chord)  
+1 3 #5 b7 b9 - 7#5b9 (Micky Baker)  
 
 
 #### Scales
 
 
-1 2 3 5 6 - Major Pentatonic 
-1 b3 4 5 b7 - Minor Pentatonic 
-1 b3 4 b5 5 b7 - Blues Scale (Hexatonic) 
-1 2 b3 4 b5 6 b7 - Blues Scale (Heptatonic) 
-1 2 b3 3 4 5 6 b7 7 - Blues Scale (Nonatonic) 
-1 2 3 4 5 6 7 - Major 
-1 2 b3 4 5 b6 b7 - Minor 
-1 2 3 4 5 6 7 - Ionian 
-1 2 b3 4 5 6 b7 - Dorian 
-1 b2 b3 4 5 b6 b7 - Phrygian 
-1 2 3 #4 5 6 7 - Lydian 
-1 2 3 4 5 6 b7 8 - Mixolydian 
-1 2 b3 4 5 b6 b7 8 - Aolian 
-1 b2 b3 4 b5 b6 b7 8 - Locrian 
-1 2 b3 4 5 6 7 - Melodic Minor 
-1 b2 b3 4 5 6 b7 - Dorian b2 or Dorian b9 (Melodic Minor, Mode 2) 
-1 2 3 #4 #5 6 7 - Lydian #5 (Lydian Augmented) (Melodic Minor, Mode 3) 
-1 2 3 #4 5 6 b7 - Lydian Dominant (Melodic Minor, Mode 4) 
-1 2 3 4 5 b6 b7 - Mixolydian b6 (Hindu Scale) (Melodic Minor, Mode 5) 
-1 2 b3 4 b5 b6 b7 - Aeolian b5 (Melodic Minor, Mode 6) 
-1 b9 #9 3 b5 #5 b7 - Altered (Melodic Minor, Mode 7) 
-1 b2 #2 3 b5 #5 b7 - Altered (One octave) (Melodic Minor, Mode 7) 
-1 b2 b3 3 b5 b6 b7 - Altered (One octave B) (Melodic Minor, Mode 7) 
-1 2 b3 4 5 b6 7 - Harmonic Minor 
-1 b2 b3 4 b5 6 b7 - Locrian 13 or Locrian 6 (half-diminished) (Harmonic Minor, Mode 2) 
-1 2 3 4 #5 6 7 - Ionian #5 (augmented) (Harmonic Minor, Mode 3) 
-1 2 b3 #4 5 6 b7 - Dorian #11 (or dorian #4) (minor) (Harmonic Minor, Mode 4) 
-1 b2 3 4 5 b6 b7 - Phrygian Dominant (dominant) (Harmonic Minor, Mode 5) 
-1 #2 3 #4 5 6 7 - Lydian #2 (major). (Harmonic Minor, Mode 6) 
-1 b2 b3 b4 b5 b6 bb7 - Super locrian bb7 (diminished) (Harmonic Minor, Mode 7) 
-1 2 3 4 5 b6 7 - Ionian b6 (Harmonic major) 
-1 2 b3 4 b5 6 b7 - Dorian b5. (Harmonic major, Mode 2) 
-1 b2 b3 b4 5 b6 b7 - Phrygian b4. (Harmonic major, Mode 3) 
-1 2 b3 #4 5 6 7 - Lydian b3. (Harmonic major, Mode 4) 
-1 b2 3 4 5 6 b7 - Mixolydian b2. (Harmonic major, Mode 5) 
-1 #2 3 #4 #5 6 7 - Lydian Augmented #2. (Harmonic major, Mode 6) 
-1 b2 b3 4 b5 b6 bb7 - Locrian  bb7. (Harmonic major, Mode 7) 
+1 2 3 5 6 - Major Pentatonic  
+1 b3 4 5 b7 - Minor Pentatonic  
+1 b3 4 b5 5 b7 - Blues Scale (Hexatonic)  
+1 2 b3 4 b5 6 b7 - Blues Scale (Heptatonic)  
+1 2 b3 3 4 5 6 b7 7 - Blues Scale (Nonatonic)  
+1 2 3 4 5 6 7 - Major  
+1 2 b3 4 5 b6 b7 - Minor  
+1 2 3 4 5 6 7 - Ionian  
+1 2 b3 4 5 6 b7 - Dorian  
+1 b2 b3 4 5 b6 b7 - Phrygian  
+1 2 3 #4 5 6 7 - Lydian  
+1 2 3 4 5 6 b7 8 - Mixolydian  
+1 2 b3 4 5 b6 b7 8 - Aolian  
+1 b2 b3 4 b5 b6 b7 8 - Locrian  
+1 2 b3 4 5 6 7 - Melodic Minor  
+1 b2 b3 4 5 6 b7 - Dorian b2 or Dorian b9 (Melodic Minor, Mode 2)  
+1 2 3 #4 #5 6 7 - Lydian #5 (Lydian Augmented) (Melodic Minor, Mode 3)  
+1 2 3 #4 5 6 b7 - Lydian Dominant (Melodic Minor, Mode 4)  
+1 2 3 4 5 b6 b7 - Mixolydian b6 (Hindu Scale) (Melodic Minor, Mode 5)  
+1 2 b3 4 b5 b6 b7 - Aeolian b5 (Melodic Minor, Mode 6)  
+1 b9 #9 3 b5 #5 b7 - Altered (Melodic Minor, Mode 7)  
+1 b2 #2 3 b5 #5 b7 - Altered (One octave) (Melodic Minor, Mode 7)  
+1 b2 b3 3 b5 b6 b7 - Altered (One octave B) (Melodic Minor, Mode 7)  
+1 2 b3 4 5 b6 7 - Harmonic Minor  
+1 b2 b3 4 b5 6 b7 - Locrian 13 or Locrian 6 (half-diminished) (Harmonic Minor, Mode 2)  
+1 2 3 4 #5 6 7 - Ionian #5 (augmented) (Harmonic Minor, Mode 3)  
+1 2 b3 #4 5 6 b7 - Dorian #11 (or dorian #4) (minor) (Harmonic Minor, Mode 4)  
+1 b2 3 4 5 b6 b7 - Phrygian Dominant (dominant) (Harmonic Minor, Mode 5)  
+1 #2 3 #4 5 6 7 - Lydian #2 (major). (Harmonic Minor, Mode 6)  
+1 b2 b3 b4 b5 b6 bb7 - Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)  
+1 2 3 4 5 b6 7 - Ionian b6 (Harmonic major)  
+1 2 b3 4 b5 6 b7 - Dorian b5. (Harmonic major, Mode 2)  
+1 b2 b3 b4 5 b6 b7 - Phrygian b4. (Harmonic major, Mode 3)  
+1 2 b3 #4 5 6 7 - Lydian b3. (Harmonic major, Mode 4)  
+1 b2 3 4 5 6 b7 - Mixolydian b2. (Harmonic major, Mode 5)  
+1 #2 3 #4 #5 6 7 - Lydian Augmented #2. (Harmonic major, Mode 6)  
+1 b2 b3 4 b5 b6 bb7 - Locrian  bb7. (Harmonic major, Mode 7)  
 
 
 

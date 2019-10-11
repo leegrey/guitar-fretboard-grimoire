@@ -258,7 +258,7 @@ function printAppendix() {
 function printFormulasAsData(formulas) {
 	for (let i = 0; i < formulas.length; i++) {
 		const f = formulas[i];
-		echo(f.f + " - " + f.n + " ");
+		echo(f.f + " - " + f.n + "  ");
 	}
 }
 
