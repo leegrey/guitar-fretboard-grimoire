@@ -13,7 +13,6 @@ function echo(params) {
 }
 
 // the tuning of the guitar
-
 var standard_tuning = "EADGBE";
 var all_fourths_tuning = "EADGCF";
 
@@ -26,9 +25,40 @@ var allTunings = [
 
 // alphabetical intervals expressed as flats
 var notesAsFlats = "A,Bb,B,C,Db,D,Eb,E,F,Fb,G,Ab".split(',');
-// two octaves of intervals, expressed as both sharps and flats
-var intervalsAsFlats = "1,b2,2,b3,3,4,b5,5,b6,6,b7,7,8,b9,9,b10,10,11,b12,12,b13,13,b14,14,15".split(',');
-var intervalsAsSharps = "1,#1,2,#2,3,4,#4,5,#5,6,#6,7,8,#8,9,#9,10,11,#11,12,#12,13,#13,14,15".split(',');
+
+var aliases = [
+	["1"], // 1 C
+	["#1", "b2"], // 2
+	["2"], // 3 D
+	["#2", "b3"], // 4
+	["3", "b4"], // 5 E
+	["4"], // 6 F
+	["#4", "b5"], // 7
+	["5"], // 8 G
+	["#5", "b6"], // 9
+	["6", "bb7"], // 10 A
+	["#6", "b7"], // 11
+	["7"], // 12 B
+	["8"], // 13 C
+	["#8", "b9"], // 14
+	["9"], // 15 D
+	["#9", "b10"], // 16
+	["10"], // 17 E
+	["11"], // 18 F
+	["#11", "b12"], // 19
+	["12"], // 20 G
+	["#12", "b13"], // 21
+	["13"], // 22 A
+	["#13", "b14"], // 23
+	["14"], // 24 B
+	["15"], // 25 C
+];
+
+
+
+
+
+// TODO: intervals as double flats  
 
 var endl = "\n\r";
 
@@ -72,17 +102,12 @@ var chords = [
 	{ f: "1 b3 5 7 9", n : "Minor/Major Ninth"},
 	{ f: "1 b3 5 b7 9", n : "Minor Seven Nine"},
 	{ f: "1 b3 5 b7 b9", n : "Minor Seven flat Nine"},
-	
 	{ f: "1 5 7 9", n : "Power Seven Nine"},
 	{ f: "1 5 7 b9", n : "Power Seven Flat Nine"},
-	
 	{ f: "1 b3 b5", n : "Diminished"},
 	{ f: "1 b3 b5 6", n : "Diminished Seventh (1 b3 b5 bb7)"},
-	
 	{ f: "1 3 5 b7 #9", n : "Dominant Seventh Sharp Nine (Hendrix chord)"},
 	{ f: "1 3 #5 b7 b9", n : "7#5b9 (Micky Baker)"},
-	
-
 ];
 
 var scales = [
@@ -115,18 +140,15 @@ var scales = [
 	{ f: "1 2 b3 #4 5 6 b7", n : "Dorian #11 (or dorian #4) (minor) (Harmonic Minor, Mode 4)"},
 	{ f: "1 b2 3 4 5 b6 b7", n : "Phrygian Dominant (dominant) (Harmonic Minor, Mode 5)"},
 	{ f: "1 #2 3 #4 5 6 7", n : "Lydian #2 (major). (Harmonic Minor, Mode 6)"},
-	//{ f: "1 b2 b3 b4 b5 b6 bb7", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"}
-	// note: double flat not supported. TODO: add double flat
-	{ f: "1 b2 b3 b4 b5 b6 #6", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"},
+	{ f: "1 b2 b3 b4 b5 b6 bb7", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"},
 	{ f: "1 2 3 4 5 b6 7", n : "Ionian b6 (Harmonic major)"},
-	{ f: "1 2 b3 4 b5 6 b7 ", n : "Dorian b5. (Harmonic major, Mode 2)"},
-	{ f: "1 b2 b3 b4 5 b6 b7 ", n : "Phrygian b4. (Harmonic major, Mode 3)"},
+	{ f: "1 2 b3 4 b5 6 b7", n : "Dorian b5. (Harmonic major, Mode 2)"},
+	{ f: "1 b2 b3 b4 5 b6 b7", n : "Phrygian b4. (Harmonic major, Mode 3)"},
 	{ f: "1 2 b3 #4 5 6 7", n : "Lydian b3. (Harmonic major, Mode 4)"},
 	{ f: "1 b2 3 4 5 6 b7", n : "Mixolydian b2. (Harmonic major, Mode 5)"},
 	{ f: "1 #2 3 #4 #5 6 7", n : "Lydian Augmented #2. (Harmonic major, Mode 6)"},
-	//{ f: "1 b2 b3 4 b5 b6 bb7", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
-	// Again, need to fix double flat support:
-	{ f: "1 b2 b3 4 b5 b6 #6", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
+	{ f: "1 b2 b3 4 b5 b6 bb7", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
+	
 ];
 
 (function main() {
@@ -159,6 +181,8 @@ function printEntireGrimoire(variantName) {
 
 	echo(title);
 	echo(endl);
+	printFrontMatter();
+	echo(endl);
 	echo("## Intervals");
 	echo(endl);
 	printFormulasToFretboard(intervalFormulas);
@@ -170,7 +194,7 @@ function printEntireGrimoire(variantName) {
 	echo("## Scales");
 	echo(endl);
 	printFormulasToFretboard(scales);	
-	printAppendix();
+	//printAppendix();
 }
 
 function retune(t) {
@@ -196,6 +220,19 @@ function buildChordFingerings(formula) {
 	console.log(fretboard);
 }
 
+function printFrontMatter() {
+	echo("## Contents");
+	echo(endl);
+	echo("#### Chords");
+	echo(endl);
+	printFormulasAsData(chords);
+	echo(endl);
+	echo("#### Scales");
+	echo(endl);
+	printFormulasAsData(scales);
+	echo(endl);
+}
+
 function printAppendix() {
 	echo("## Appendix");
 	echo(endl);
@@ -205,9 +242,6 @@ function printAppendix() {
 	echo(endl);
 	echo("#### Intervals");
 	echo(endl);
-	echo(intervalsAsFlats);
-	echo(endl);
-	echo(intervalsAsSharps);
 	echo(endl);
 	printFormulasAsData(intervalFormulas);
 	echo(endl);
@@ -224,7 +258,7 @@ function printAppendix() {
 function printFormulasAsData(formulas) {
 	for (let i = 0; i < formulas.length; i++) {
 		const f = formulas[i];
-		echo(f.f + " - " + f.n) + "  ";
+		echo(f.f + " - " + f.n + " ");
 	}
 }
 
@@ -237,11 +271,21 @@ function printFormulasToFretboard(formulas) {
 
 // get interval index (ie number of semitones) of an interval (with sharps or flats)
 function getIntervalSemitone(interval) {
-	var intervalIndex = intervalsAsFlats.indexOf(interval);
-	if (intervalIndex == -1) intervalIndex = intervalsAsSharps.indexOf(interval);
+
+	var intervalIndex = -1;
+	for (let ai = 0; (ai < aliases.length) && intervalIndex == -1; ai++) {
+		const intervals = aliases[ai];
+		for (let i = 0; i < intervals.length; i++) {
+			const element = intervals[i];	
+			if (element == interval) {
+				intervalIndex = ai;
+				break;
+			}
+		}	
+	}
+
 	if (intervalIndex == -1) {
 		console.log("Unknown interval:", interval);
-		return -1;
 	}
 	return intervalIndex;
 }
@@ -250,6 +294,7 @@ function getIntervalSemitone(interval) {
 // wrapped within a range of one octave (12 semitones)
 function getBaseIntervalSemitone(interval) {
 	var intervalIndex = getIntervalSemitone(interval);
+	
 	if (intervalIndex == -1) return -1;
 	return intervalIndex % 12;
 }
@@ -273,7 +318,11 @@ function buildFretboardData(formula, maximumFret) {
 	var formulaIntervalsAsSemitones = [];
 	for (let i = 0; i < formulaIntervals.length; i++) {
 		const interval = formulaIntervals[i];
-		formulaIntervalsAsSemitones.push(getBaseIntervalSemitone(interval));
+		var semitone = getBaseIntervalSemitone(interval)
+		if (semitone == -1) {
+			console.log("Unrecognised interval, ", interval, "in scale", formula);
+		}
+		formulaIntervalsAsSemitones.push(semitone);
 	}
 	// print the fretboard with formula intervals marked
 	for (var i = tuning.length - 1; i >= 0; i--) {
@@ -286,10 +335,16 @@ function buildFretboardData(formula, maximumFret) {
 		// loop over all frets and label as either blank or containing a formula interval
 		for (var fi = 0; fi < maximumFret; fi++) {
 			// get the interval name of the current fret
-			intervalName = intervalsAsFlats[(noteRootIndex + fi) % 12];
+			//intervalName = intervalsAsFlats[(noteRootIndex + fi) % 12];
+			intervalName = aliases[(noteRootIndex + fi) % 12][0];
 			// see if the current note is in the formula...
 			// get the interval as semitones (within the base octave)
 			var baseSemitone = getBaseIntervalSemitone(intervalName);
+
+			if (baseSemitone == -1) {
+				console.log("Unrecognised interval, ", intervalName, "in scale", formula);
+			}
+
 			var formulaNoteIndex = formulaIntervalsAsSemitones.indexOf(baseSemitone);		
 			if (formulaNoteIndex >= 0) {
 				// using the note index, write out the name of the formula
