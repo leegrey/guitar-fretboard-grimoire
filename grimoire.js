@@ -91,66 +91,105 @@ var intervalFormulas = [
 ];
 
 var chords = [
-	{ f: "1 5", n : "Power Chord"},
-	{ f: "1 5 9", n : "Power Chord add 9"}, // not supported yet (above 7)
-	{ f: "1 3 5", n : "Major" },
-	{ f: "1 b3 5", n : "Minor"},
-	{ f: "1 3 5 7", n : "Major Seventh"},
-	{ f: "1 b3 5 b7", n : "Minor Seventh"},
-	{ f: "1 3 5 b7", n : "Dominant Seventh"},
-	{ f: "1 b3 5 7", n : "Minor/Major Seventh"},	
-	{ f: "1 b3 5 7 9", n : "Minor/Major Ninth"},
-	{ f: "1 b3 5 b7 9", n : "Minor Seven Nine"},
-	{ f: "1 b3 5 b7 b9", n : "Minor Seven flat Nine"},
-	{ f: "1 5 7 9", n : "Power Seven Nine"},
-	{ f: "1 5 7 b9", n : "Power Seven Flat Nine"},
-	{ f: "1 b3 b5", n : "Diminished"},
-	{ f: "1 b3 b5 6", n : "Diminished Seventh (1 b3 b5 bb7)"},
-	{ f: "1 3 5 b7 #9", n : "Dominant Seventh Sharp Nine (Hendrix chord)"},
-	{ f: "1 3 #5 b7 b9", n : "7#5b9 (Micky Baker)"},
+    // Triads & Basic
+    { f: "1 5", n: "Power Chord" },
+    { f: "1 3 5", n: "Major" },
+    { f: "1 b3 5", n: "Minor" },
+    { f: "1 3 #5", n: "Augmented" },
+    { f: "1 b3 b5", n: "Diminished" },
+
+    // Suspended & Add
+    { f: "1 4 5", n: "Suspended 4" },
+    { f: "1 2 5", n: "Suspended 2" },
+    { f: "1 3 5 9", n: "Major Add 9" },
+    { f: "1 b3 5 9", n: "Minor Add 9" },
+
+    // Sixths
+    { f: "1 3 5 6", n: "Major Sixth" },
+    { f: "1 b3 5 6", n: "Minor Sixth" },
+
+    // Sevenths
+    { f: "1 3 5 7", n: "Major Seventh" },
+    { f: "1 b3 5 b7", n: "Minor Seventh" },
+    { f: "1 3 5 b7", n: "Dominant Seventh" },
+    { f: "1 b3 5 7", n: "Minor/Major Seventh" },
+    { f: "1 b3 b5 b7", n: "Half-Diminished (m7b5)" },
+    { f: "1 b3 b5 6", n: "Diminished Seventh" }, // Standard notation uses bb7
+    { f: "1 3 #5 b7", n: "Augmented Seventh" },
+    { f: "1 4 5 b7", n: "Seven Sus Four" },
+
+    // Ninths & Extensions
+    { f: "1 3 5 7 9", n: "Major Ninth" },
+    { f: "1 3 5 b7 9", n: "Dominant Ninth" },
+    { f: "1 b3 5 b7 9", n: "Minor Ninth" },
+    { f: "1 b3 5 7 9", n: "Minor/Major Ninth" },
+    { f: "1 3 5 b7 b9", n: "Dominant Seven Flat Nine" },
+    { f: "1 3 5 b7 #9", n: "Dominant Seven Sharp Nine (Hendrix)" },
+    { f: "1 b3 5 b7 b9", n: "Minor Seven Flat Nine" },
+
+    // Altered / Specialty / Quartal
+    { f: "1 3 #5 b7 b9", n: "7#5b9 (Mickey Baker)" },
+    { f: "1 4 b7 b3", n: "Quartal Minor 7" },
+    { f: "1 4 7 3", n: "Quartal Major 7" },
+    { f: "1 b5 7 3", n: "Quartal Major 7 Flat Five" },
+    { f: "1 4 b7 3", n: "Quartal 7" }
 ];
 
 var scales = [
-	{ f: "1 2 3 5 6", n : "Major Pentatonic"},
-	{ f: "1 b3 4 5 b7", n : "Minor Pentatonic"},
-	{ f: "1 b3 4 b5 5 b7", n : "Blues Scale (Hexatonic)"},
-	{ f: "1 2 b3 4 b5 6 b7", n : "Blues Scale (Heptatonic)"},
-	{ f: "1 2 b3 3 4 5 6 b7 7", n : "Blues Scale (Nonatonic)"},
-	{ f: "1 2 3 4 5 6 7", n : "Major"},
-	{ f: "1 2 b3 4 5 b6 b7", n : "Minor"},	
-	{ f: "1 2 3 4 5 6 7", n : "Ionian"},
-	{ f: "1 2 b3 4 5 6 b7", n : "Dorian"},
-	{ f: "1 b2 b3 4 5 b6 b7", n : "Phrygian"},
-	{ f: "1 2 3 #4 5 6 7", n : "Lydian"},
-	{ f: "1 2 3 4 5 6 b7 8", n : "Mixolydian"},
-	{ f: "1 2 b3 4 5 b6 b7 8", n : "Aolian"},
-	{ f: "1 b2 b3 4 b5 b6 b7 8", n : "Locrian"},
-	{ f: "1 2 b3 4 5 6 7", n : "Melodic Minor"},	
-	{ f: "1 b2 b3 4 5 6 b7", n : "Dorian b2 or Dorian b9 (Melodic Minor, Mode 2)"},	
-	{ f:  "1 2 3 #4 #5 6 7", n : "Lydian #5 (Lydian Augmented) (Melodic Minor, Mode 3)"},	
-	{ f: "1 2 3 #4 5 6 b7", n : "Lydian Dominant (Melodic Minor, Mode 4)"},	
-	{ f: "1 2 3 4 5 b6 b7", n : "Mixolydian b6 (Hindu Scale) (Melodic Minor, Mode 5)"},	
-	{ f: "1 2 b3 4 b5 b6 b7", n : "Aeolian b5 (Melodic Minor, Mode 6)"},	
-	{ f: "1 b9 #9 3 b5 #5 b7", n : "Altered (Melodic Minor, Mode 7)"},
-	{ f: "1 b2 #2 3 b5 #5 b7", n : "Altered (One octave) (Melodic Minor, Mode 7)"},
-	{ f: "1 b2 b3 3 b5 b6 b7", n : "Altered (One octave B) (Melodic Minor, Mode 7)"},
-	{ f: "1 2 b3 4 5 b6 7", n : "Harmonic Minor"},
-	{ f: "1 b2 b3 4 b5 6 b7", n : "Locrian 13 or Locrian 6 (half-diminished) (Harmonic Minor, Mode 2)"},
-	{ f: "1 2 3 4 #5 6 7", n : "Ionian #5 (augmented) (Harmonic Minor, Mode 3)"},
-	{ f: "1 2 b3 #4 5 6 b7", n : "Dorian #11 (or dorian #4) (minor) (Harmonic Minor, Mode 4)"},
-	{ f: "1 b2 3 4 5 b6 b7", n : "Phrygian Dominant (dominant) (Harmonic Minor, Mode 5)"},
-	{ f: "1 #2 3 #4 5 6 7", n : "Lydian #2 (major). (Harmonic Minor, Mode 6)"},
-	{ f: "1 b2 b3 b4 b5 b6 bb7", n : "Super locrian bb7 (diminished) (Harmonic Minor, Mode 7)"},
-	{ f: "1 2 3 4 5 b6 7", n : "Ionian b6 (Harmonic major)"},
-	{ f: "1 2 b3 4 b5 6 b7", n : "Dorian b5. (Harmonic major, Mode 2)"},
-	{ f: "1 b2 b3 b4 5 b6 b7", n : "Phrygian b4. (Harmonic major, Mode 3)"},
-	{ f: "1 2 b3 #4 5 6 7", n : "Lydian b3. (Harmonic major, Mode 4)"},
-	{ f: "1 b2 3 4 5 6 b7", n : "Mixolydian b2. (Harmonic major, Mode 5)"},
-	{ f: "1 #2 3 #4 #5 6 7", n : "Lydian Augmented #2. (Harmonic major, Mode 6)"},
-	{ f: "1 b2 b3 4 b5 b6 bb7", n : "Locrian  bb7. (Harmonic major, Mode 7)"}
-	
-];
+    // --- Pentatonic & Blues ---
+    { f: "1 2 3 5 6", n: "Major Pentatonic" },
+    { f: "1 b3 4 5 b7", n: "Minor Pentatonic" },
+    { f: "1 b2 4 5 b7", n: "Insen (Japanese)" },
+    { f: "1 2 b3 5 b6", n: "Hirajoshi" },
+    { f: "1 2 4 5 b7", n: "Egyptian / Suspended Pentatonic" },
+    { f: "1 b3 4 b5 5 b7", n: "Blues Scale (Hexatonic)" },
+    { f: "1 2 b3 4 b5 6 b7", n: "Blues Scale (Heptatonic)" },
+    { f: "1 2 b3 3 4 5 6 b7 7", n: "Blues Scale (Nonatonic)" },
 
+    // --- Symmetrical & Altered Systems ---
+    { f: "1 2 3 #4 #5 b7", n: "Whole Tone" },
+    { f: "1 b2 b3 3 b5 5 6 b7", n: "Half-Whole Diminished (Dominant)" },
+    { f: "1 2 b3 4 b5 b6 6 7", n: "Whole-Half Diminished" },
+    { f: "1 b2 2 b3 3 4 b5 5 b6 6 b7 7", n: "Chromatic" },
+
+    // --- Major / Diatonic Modes ---
+    { f: "1 2 3 4 5 6 7", n: "Major / Ionian" },
+    { f: "1 2 b3 4 5 6 b7", n: "Dorian" },
+    { f: "1 b2 b3 4 5 b6 b7", n: "Phrygian" },
+    { f: "1 2 3 #4 5 6 7", n: "Lydian" },
+    { f: "1 2 3 4 5 6 b7", n: "Mixolydian" },
+    { f: "1 2 b3 4 5 b6 b7", n: "Natural Minor / Aeolian" },
+    { f: "1 b2 b3 4 b5 b6 b7", n: "Locrian" },
+
+    // --- Melodic Minor Modes ---
+    { f: "1 2 b3 4 5 6 7", n: "Melodic Minor" },
+    { f: "1 b2 b3 4 5 6 b7", n: "Dorian b2 (Melodic Minor Mode 2)" },
+    { f: "1 2 3 #4 #5 6 7", n: "Lydian Augmented (Melodic Minor Mode 3)" },
+    { f: "1 2 3 #4 5 6 b7", n: "Lydian Dominant (Melodic Minor Mode 4)" },
+    { f: "1 2 3 4 5 b6 b7", n: "Mixolydian b6 / Hindu (Melodic Minor Mode 5)" },
+    { f: "1 2 b3 4 b5 b6 b7", n: "Aeolian b5 / Half-Diminished (Melodic Minor Mode 6)" },
+    { f: "1 b2 b3 b4 b5 b6 b7", n: "Altered / Super Locrian (Melodic Minor Mode 7)" },
+
+    // --- Harmonic Minor Modes ---
+    { f: "1 2 b3 4 5 b6 7"
+		
+		, n: "Harmonic Minor" },
+    { f: "1 b2 b3 4 b5 6 b7", n: "Locrian Natural 6 (Harmonic Minor Mode 2)" },
+    { f: "1 2 3 4 #5 6 7", n: "Ionian #5 (Harmonic Minor Mode 3)" },
+    { f: "1 2 b3 #4 5 6 b7", n: "Dorian #4 (Harmonic Minor Mode 4)" },
+    { f: "1 b2 3 4 5 b6 b7", n: "Phrygian Dominant (Harmonic Minor Mode 5)" },
+    { f: "1 #2 3 #4 5 6 7", n: "Lydian #2 (Harmonic Minor Mode 6)" },
+    { f: "1 b2 b3 b4 b5 b6 bb7", n: "Ultralocrian / Super Locrian bb7 (Harmonic Minor Mode 7)" },
+
+    // --- Harmonic Major Modes ---
+    { f: "1 2 3 4 5 b6 7", n: "Harmonic Major" },
+    { f: "1 2 b3 4 b5 6 b7", n: "Dorian b5 (Harmonic Major Mode 2)" },
+    { f: "1 b2 b3 b4 5 b6 b7", n: "Phrygian b4 (Harmonic Major Mode 3)" },
+    { f: "1 2 b3 #4 5 6 7", n: "Lydian b3 (Harmonic Major Mode 4)" },
+    { f: "1 b2 3 4 5 6 b7", n: "Mixolydian b2 (Harmonic Major Mode 5)" },
+    { f: "1 #2 3 #4 #5 6 7", n: "Lydian Augmented #2 (Harmonic Major Mode 6)" },
+    { f: "1 b2 b3 4 b5 b6 bb7", n: "Locrian bb7 (Harmonic Major Mode 7)" }
+];
 (function main() {
 
 	// retune(all_fourths_tuning);
