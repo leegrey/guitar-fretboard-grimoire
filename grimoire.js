@@ -62,7 +62,7 @@ var aliases = [
 
 var endl = "\n";
 
-var MaxFret = 12;
+var MaxFret = 14;
 
 var intervalFormulas = [
     { f: "1", n : "Unison"},
@@ -263,6 +263,10 @@ function buildChordFingerings(formula) {
 function printFrontMatter() {
     echo("## Contents");
     echo(endl);
+	echo("#### Basic Intervals");
+    echo(endl);
+    printFormulasAsData(intervalFormulas);
+	echo(endl);
     echo("#### Chords");
     echo(endl);
     printFormulasAsData(chords);
